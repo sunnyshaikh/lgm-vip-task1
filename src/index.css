@@ -1,13 +1,138 @@
-body {
+/* variables */
+:root {
+  --primary: #3495e4;
+  --light: #f1f1f1;
+  --white: #fff;
+  --dark: #333;
+  --danger: #dc143c;
+  --success: #25be23;
+}
+
+/* global */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* default */
+body {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  position: relative;
+  padding: 1.25rem;
+}
+
+.btn {
+  padding: .75rem 1rem;
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: .25s ease;
+  font-weight: 700;
+}
+
+.btn:hover {
+  opacity: .75;
+}
+
+/* primary btn */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* success btn */
+.btn-success {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+/* danger btn */
+.btn-danger {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+/* wrapper css */
+.todo-wrapper {
+  background-color: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.todo-wrapper-title {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+/* form css */
+.form-group {
+  width: 100%;
+  display: flex;
+  gap: .5rem;
+}
+
+.form-control {
+  flex: 1;
+  padding: 1rem;
+  border: 0;
+  border-radius: 6px;
+}
+
+/* todo body css */
+.todo-body {
+  margin-top: .75rem;
+  border-radius: 6px;
+  background-color: var(--white);
+  padding: 0 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo {
+  padding: .5rem 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo:last-child {
+  border: 0;
+}
+
+.todo-task {
+  flex: 1;
+}
+
+.todo-task.completed {
+  text-decoration: line-through;
+  opacity: .75;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: .25rem
 }
